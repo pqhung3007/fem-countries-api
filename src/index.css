@@ -1,13 +1,100 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --dark-bg-color: hsl(207, 26%, 17%);
+  --article-color: hsl(209, 23%, 22%);
+  --text-color: hsl(0, 0%, 100%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 52%);
+  --light-mode-background: hsl(0, 0%, 98%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 320px;
+  height: 200px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--dark-bg-color);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Countries component */
+.countries {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 3rem;
+}
+
+.countries .flag {
+  width: 100%;
+  height: 200px;
+}
+
+.countries .flag img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.countries .details {
+  border-radius: 0 0 5px 5px;
+  background-color: var(--article-color);
+  /* margin: -10px 0 30px; */
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.countries .details h3 {
+  margin: 0.8rem 0;
+}
+
+.countries .details h4 {
+  margin: 0.6rem 0;
+}
+
+.countries .details h4 span {
+  font-weight: 300;
+}
+
+article {
+  max-width: 350px;
+}
+
+/* Media queries */
+@media (min-width: 640px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1366px) {
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
