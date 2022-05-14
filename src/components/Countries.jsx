@@ -4,7 +4,7 @@ const url = "https://restcountries.com/v3.1/all";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const fetchCountries = async () => {
     const response = await fetch(url);
@@ -18,11 +18,11 @@ const Countries = () => {
 
   return (
     <div className="countries">
-      {countries.map((country, index) => {
-        const { name, flags, population, region, capital } = country;
+      {countries.map((country) => {
+        const { ccn3, name, flags, population, region, capital } = country;
 
         return (
-          <article key={index}>
+          <article key={parseInt(ccn3)}>
             <div className="flag">
               <img src={flags.png} alt={name} />
             </div>
