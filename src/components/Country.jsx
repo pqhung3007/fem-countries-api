@@ -18,7 +18,7 @@ const Country = () => {
   }, [name]);
 
   return (
-    <section className="section-container">
+    <section className="country">
       <Link to="/" className="btn btn-light">
         Back Home
       </Link>
@@ -27,7 +27,7 @@ const Country = () => {
           numericCode,
           name,
           nativeName,
-          flags,
+          flag,
           population,
           region,
           subregion,
@@ -40,9 +40,9 @@ const Country = () => {
 
         return (
           <article key={numericCode}>
-            <div className="country">
+            <div className="country-inner">
               <div className="country-flag">
-                <img src={flags.png} alt={name} />
+                <img src={flag} alt={name} />
               </div>
 
               <div className="country-details">
