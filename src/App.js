@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Countries from './components/Countries'
 import Country from './components/Country';
 import Header from './components/Header';
@@ -9,10 +9,14 @@ function App() {
     <Router>
       <>
         <Header />
-        <Route exact path='/'>
-          <Countries />
-        </Route>
-        <Route path='/countries/:name' children={<Country />}></Route>
+        <Routes>
+          <Route exact path='/'
+            element={<Countries />}
+          />
+          <Route path='/countries/:name'
+            element={<Country />}
+          />
+        </Routes>
       </>
     </Router>
   );
