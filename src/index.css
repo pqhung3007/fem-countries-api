@@ -35,6 +35,26 @@ body {
   margin: 0 auto;
 }
 
+/* Header component */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: var(--text-color);
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0 5px 10px hsla(200, 15%, 8%, 0.1);
+}
+
+.btn-moon {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.btn-moon {
+  cursor: pointer;
+}
 /* Countries component */
 .countries {
   display: grid;
