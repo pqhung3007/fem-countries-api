@@ -15,6 +15,7 @@ const Country = () => {
 
   useEffect(() => {
     fetchCountryInfo();
+    // eslint-disable-next-line
   }, [name]);
 
   return (
