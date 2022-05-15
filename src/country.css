@@ -1,11 +1,11 @@
 .country {
   padding: 3rem;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .btn {
-  color: #fff;
-  background-color: var(--article-color);
+  color: var(--text-color);
+  background-color: var(--element-color);
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -38,14 +38,10 @@ h5 {
 
 .country article .borders ul {
   margin: 0.8rem 1rem 0 0;
-  background-color: var(--article-color);
+  background-color: var(--);
   padding: 3px 20px;
   border-radius: 3px;
   box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
-}
-
-.country article .borders ul.light-theme {
-  background-color: var(--light-mode-background);
 }
 
 .country-inner {
