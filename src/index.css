@@ -39,6 +39,19 @@ body {
   margin: 0 auto;
 }
 
+/** Spinner component */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.spinner img {
+  width: 200px;
+  height: 200px;
+}
+
 /** Header component */
 .header {
   display: flex;
