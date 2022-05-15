@@ -13,7 +13,7 @@ function App() {
           <Route exact path='/'
             element={<Countries />}
           />
-          <Route path='/countries/:name'
+          <Route path='/countries/:code'
             element={<Country />}
           />
         </Routes>

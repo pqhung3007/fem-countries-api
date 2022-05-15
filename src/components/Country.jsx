@@ -4,19 +4,20 @@ import "../country.css";
 
 const Country = () => {
   const [country, setCountry] = useState([]);
-  const { name } = useParams();
-  const url = `https://restcountries.com/v2/name/${name}`;
+  const { code } = useParams();
+  const url = `https://restcountries.com/v2/alpha?codes=${code}`;
 
   const fetchCountryInfo = async () => {
     const response = await fetch(url);
     const data = await response.json();
     setCountry(data);
+    console.log(data);
   };
 
   useEffect(() => {
     fetchCountryInfo();
     // eslint-disable-next-line
-  }, [name]);
+  }, [code]);
 
   return (
     <section className="country">
@@ -84,13 +85,17 @@ const Country = () => {
                 <div className="third-detail">
                   <h3>Border Countries: </h3>
                   <div className="borders">
-                    {borders.map((border) => {
-                      return (
-                        <ul key={border}>
-                          <li>{border}</li>
-                        </ul>
-                      );
-                    })}
+                    {borders ? (
+                      borders.map((border) => {
+                        return (
+                          <ul key={border}>
+                            <li>{border}</li>
+                          </ul>
+                        );
+                      })
+                    ) : (
+                      <p style={{ marginTop: "1rem" }}>No border country</p>
+                    )}
                   </div>
                 </div>
               </div>

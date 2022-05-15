@@ -39,11 +39,18 @@ const Countries = () => {
       ) : searchInput.length > 1 ? (
         <div className="countries">
           {filteredCountries.map((country) => {
-            const { numericCode, name, flags, population, region, capital } =
-              country;
+            const {
+              numericCode,
+              name,
+              alpha3Code,
+              flags,
+              population,
+              region,
+              capital,
+            } = country;
 
             return (
-              <Link to={`/countries/${name}`} key={numericCode}>
+              <Link to={`/countries/${alpha3Code}`} key={numericCode}>
                 <article key={numericCode}>
                   <div className="flag">
                     <img src={flags.png} alt={name} />
@@ -68,11 +75,18 @@ const Countries = () => {
       ) : (
         <div className="countries">
           {countries.map((country) => {
-            const { numericCode, name, flags, population, region, capital } =
-              country;
+            const {
+              numericCode,
+              name,
+              alpha3Code,
+              flags,
+              population,
+              region,
+              capital,
+            } = country;
 
             return (
-              <Link to={`/countries/${name}`} key={numericCode}>
+              <Link to={`/countries/${alpha3Code}`} key={numericCode}>
                 <article key={numericCode}>
                   <div className="flag">
                     <img src={flags.png} alt={name} />
