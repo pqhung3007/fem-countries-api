@@ -74,14 +74,14 @@ body {
 }
 
 .btn-moon {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   color: var(--text-color);
   font-family: inherit;
-}
-
-.btn-moon {
-  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /** Filter component */

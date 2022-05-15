@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
+const getLocalStorageTheme = () => {
+  let theme = "dark-theme";
+  if (localStorage.getItem("theme")) {
+    theme = localStorage.getItem("theme");
+  }
+  return theme;
+};
+
 const Header = () => {
-  const [theme, setTheme] = useState("dark-theme");
+  const [theme, setTheme] = useState(getLocalStorageTheme());
 
   const changeTheme = () => {
     if (theme === "dark-theme") {
@@ -14,6 +22,7 @@ const Header = () => {
 
   useEffect(() => {
     document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
@@ -24,9 +33,17 @@ const Header = () => {
 
       <div>
         <button className="btn-moon" onClick={changeTheme}>
-          <FaMoon />
-          <FaSun />
-          Change Theme
+          {theme === "dark-theme" ? (
+            <>
+              <FaMoon />
+              Switch to Night Mode
+            </>
+          ) : (
+            <>
+              <FaSun />
+              Switch to Light Mode
+            </>
+          )}
         </button>
       </div>
     </header>
