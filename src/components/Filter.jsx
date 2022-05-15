@@ -42,10 +42,7 @@ const Filter = ({
 
     if (searchInput) {
       const filteredCountries = countries.filter((country) =>
-        Object.values(country)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
+        country.name.toLowerCase().includes(searchValue.toLowerCase())
       );
       setFilteredCountries(filteredCountries);
     } else {
